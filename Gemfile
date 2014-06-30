@@ -46,6 +46,7 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'launchy'
   gem 'capybara'
+  gem 'mocha'
 end
 
 
