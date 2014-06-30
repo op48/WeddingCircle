@@ -42,6 +42,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'pry-byebug'
+  gem 'cucumber-rails', :require => false
 end
 
 
