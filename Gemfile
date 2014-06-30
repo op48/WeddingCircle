@@ -43,8 +43,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry-byebug'
   gem 'cucumber-rails', :require => false
+  gem 'database_cleaner', '~> 1.3.0'
 end
-
 
 
 
