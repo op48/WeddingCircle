@@ -179,6 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner (~> 1.3.0)
