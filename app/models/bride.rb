@@ -1,0 +1,2 @@
+class Bride < User
+end
