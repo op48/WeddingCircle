@@ -12,6 +12,9 @@
   <% end -%>
 
   <div><%= f.submit "Sign in" %></div>
+
+  <%= link_to "Login with Facebook", authorise_facebook_users_path, :class => "login-facebook" %>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
