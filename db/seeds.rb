@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.find_or_create_by!(:first_name => Faker::Name.first_name) do |user|  
+  user.last_name = Faker::Name.last_name
+  user.email = Faker::Internet.email
+  user.password = "password"
+end
