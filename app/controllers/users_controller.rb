@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   
+  def show
+    @user = User.find(params[:id])
+
+  end
+  
   def authorise_facebook#get oauth token
     #binding.pry
     redirect_to facebook_oauth_client.auth_code.authorize_url(
