@@ -3,6 +3,7 @@ Feature: A user creates a wedding
 Background:
   Given a user exists
     And user is signed in  
+    And a wedding exists
     And on the edit wedding page  
 @wip
 Scenario: A user creates a wedding

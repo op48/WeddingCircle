@@ -11,8 +11,15 @@ Given(/^user is signed in$/) do
   visit new_user_session_path
 end
 
+Given(/^a wedding exists$/) do
+  Wedding.create!(
+    :title => "bob&sharons",
+    :wedding_date => "05 Dec 2014"
+    )
+end
+
 Given(/^on the edit wedding page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit edit_wedding_path
 end
 
 When(/^a user completes the form with valid info$/) do
