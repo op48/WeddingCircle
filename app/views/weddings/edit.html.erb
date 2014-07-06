@@ -1,0 +1,18 @@
+
+<%= form_for :wedding, url: wedding_path, :method => :put do |f| %>
+
+  <%= field_set_tag do %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <% end %>
+
+  <%= field_set_tag do %>
+    <%= f.label :wedding_date %>
+    <%= f.text_field :wedding_date%>
+  <% end %>
+
+
+  <%= submit_tag "Update" %>
+
+<% end %>
+
