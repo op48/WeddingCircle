@@ -11,3 +11,7 @@ User.find_or_create_by!(:first_name => Faker::Name.first_name) do |user|
   user.email = Faker::Internet.email
   user.password = "password"
 end
+
+Wedding.find_or_create_by!(:title => "Ben & Jerry") do |wedding|  
+  wedding.wedding_date = "15 Dec 2014"
+end
