@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
+  #before_action :authenticate_user!
   
   def show
     @user = User.find(params[:id])
-
   end
+
+  # def me
+  #   sign_in(User.find(params[:id]))
+  #   render :show
+  # end
   
   def authorise_facebook#get oauth token
     #binding.pry
@@ -37,8 +42,10 @@ class UsersController < ApplicationController
     @user.provider = "facebook"
     @user.save!
     
+    sign_in(@user)
     #4. Redirect somewhere else and say tht we're logged in
-    redirect_to root_path
+    redirect_to user_path(@user)
+    #sign_in_and_redirect(@user)
   end
 
   private
