@@ -1,4 +1,6 @@
+<div class="edit-wedding">
 
+<h2>Edit My Wedding</h2>
 <%= form_for :wedding, url: wedding_path, :method => :put do |f| %>
 
   <%= field_set_tag do %>
@@ -8,11 +10,21 @@
 
   <%= field_set_tag do %>
     <%= f.label :wedding_date %>
-    <%= f.text_field :wedding_date%>
+    <%= f.date_select(:wedding_date, { start_year: Time.now.year, end_year: (Time.now.year + 10), order: [:day, :month, :year]}) %>
   <% end %>
 
+  <%= field_set_tag do %>
+    <h4>Roles: </h4>
+    <%= f.collection_select(:wedding, :user_id, @user  ["Bride", "Groom"]) %>
+  <% end %>
 
   <%= submit_tag "Update" %>
 
 <% end %>
+
+<div>
+
+<!-- <div><%#= f.label :type, "Role" %>
+      <%#= f.select(:type, ["Bride", "Groom", "Maid of Honour", "Best man"]) %>
+</div> -->
 
