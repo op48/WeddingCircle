@@ -1,2 +1,2 @@
-class Bride < User
+class Bride < Role
 end
