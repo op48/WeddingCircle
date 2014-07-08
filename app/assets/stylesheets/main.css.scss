@@ -73,7 +73,7 @@ a {
 .home-message { 
   position: relative;
   text-align: center;
-  top: 350px;    
+  top: 250px;    
 }
 
 a:visited {
@@ -82,6 +82,12 @@ a:visited {
 
 a:hover {
   color: #9BB5F2;
+}
+
+.main-content {
+  display:block;
+  position: relative;
+  top: 100px;
 }
 
 /*.logo-circle {
