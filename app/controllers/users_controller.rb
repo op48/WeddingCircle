@@ -1,15 +1,10 @@
 class UsersController < ApplicationController
-  #before_action :authenticate_user!
+  before_filter :authenticate_user!, :except => [:authorise_facebook, :facebook_oauth_callback] 
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
-
-  # def me
-  #   sign_in(User.find(params[:id]))
-  #   render :show
-  # end
-  
+ 
   def authorise_facebook#get oauth token
     #binding.pry
     redirect_to facebook_oauth_client.auth_code.authorize_url(
@@ -44,7 +39,7 @@ class UsersController < ApplicationController
     
     sign_in(@user)
     #4. Redirect somewhere else and say tht we're logged in
-    redirect_to user_path(@user)
+    redirect_to user_path
     #sign_in_and_redirect(@user)
   end
 
