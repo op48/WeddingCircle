@@ -8,29 +8,35 @@ class WeddingsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @user = current_user
     @wedding = Wedding.new(allowed_params)
     @wedding.save!
     redirect_to wedding_path(@wedding)
   end
 
+  def index
+    @wedding = Wedding.all
+  end
+
   def show
     @wedding = Wedding.find(params[:id])
-    #@role = Role.find(params[:id])
   end
 
   def edit
     @wedding = Wedding.find(params[:id])
-    #binding.pry
   end
 
   def update
     @wedding = Wedding.find(params[:id])
-    #binding.pry
     @wedding.update(allowed_params)
     redirect_to wedding_path
   end
+
+  def destroy
+    @wedding = Wedding.find(params[:id])
+    @wedding.destroy
+    redirect_to user_path
+  end 
 
   private
   def allowed_params
