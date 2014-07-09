@@ -1,7 +1,8 @@
 <div class="edit-wedding">
 
 <h2>Edit My Wedding</h2>
-<%= form_for :wedding, url: wedding_path, :method => :put do |f| %>
+
+<%= form_for @wedding, url: wedding_path, :method => :put do |f| %>
 
   <%= field_set_tag do %>
     <%= f.label :title %>
@@ -9,14 +10,26 @@
   <% end %>
 
   <%= field_set_tag do %>
-    <%= f.label :wedding_date %>
+    <%= f.label :wedding_date, "Wedding Date" %>
     <%= f.date_select(:wedding_date, { start_year: Time.now.year, end_year: (Time.now.year + 10), order: [:day, :month, :year]}) %>
   <% end %>
 
-  <%= field_set_tag do %>
-    <h4>Roles: </h4>
-    <%= f.collection_select(:wedding, :user_id, @user  ["Bride", "Groom"]) %>
-  <% end %>
+  <%= f.fields_for :roles do |role_attributes| %>
+    
+    <%= field_set_tag do %>
+      <%=role_attributes.label :title, "Create Role" %>
+      <%=role_attributes.text_field :title %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%=role_attributes.label :user_id, "Role Assigned To =>" %>
+      <%=role_attributes.text_field :user_id, :value => "#{@user.id}"  %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= role_attributes.label :role_description %>
+      <%= role_attributes.text_area(:role_description, :cols => 50, :rows => 5, :class => "role-description") %>
+    <% end %>
 
   <%= submit_tag "Update" %>
 
@@ -24,7 +37,5 @@
 
 <div>
 
-<!-- <div><%#= f.label :type, "Role" %>
-      <%#= f.select(:type, ["Bride", "Groom", "Maid of Honour", "Best man"]) %>
-</div> -->
+
 
