@@ -1,3 +1,11 @@
-<h1><%= @wedding.title %></h1>
+<div class="show-wedding">
+<h2><%= @wedding.title %></h2>
 
-<h2>Wedding Date: <%= @wedding.wedding_date %></h2>
+<h3>Wedding Date: <%= @wedding.wedding_date.strftime('%d . %B . %Y') %></h3>
+
+<%= link_to "Edit My Wedding", edit_wedding_path, class: "edit-my-wedding" %>
+<%= link_to "Delete My Wedding", wedding_path, method: :delete,  class: "edit-my-wedding" %>
+
+<h3>My Role: <%= @wedding.roles.first.title %></h3>
+
+<div>
