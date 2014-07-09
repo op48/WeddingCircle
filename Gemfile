@@ -54,6 +54,8 @@ group :development, :test do
   gem 'mocha'
 end
 
+gem 'simplecov', :require => false, :group => :test
+
 
 
 
