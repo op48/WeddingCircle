@@ -1,0 +1,10 @@
+<div class="show-user">
+<h2>Welcome to your dashboard <%= @user.first_name %> </h2>
+
+<ul>
+<li><%= link_to 'Create Wedding', new_wedding_path, :class => "user-links" %></li>
+<li><%= link_to 'Join Event', weddings_path, :class => "user-links" %></li>
+<li><%= link_to 'Create Task', new_task_path, :class => "user-links" %></li>
+</ul>
+
+</div>

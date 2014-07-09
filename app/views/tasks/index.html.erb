@@ -1,0 +1,16 @@
+<h2>Tasks Due</h2>
+
+<ul>
+  <% @tasks.each do |t| %>
+    <li>
+      Wedding: <%= t.wedding_id %>
+      <%= link_to "Edit Task", edit_task_path("#{t.id}"), :class => "change-task" %>
+      <%= link_to "Delete Task", task_path("#{t.id}"), :method => :delete,:class => "change-task" %>
+    </li> 
+    
+    <li><%= t.title %></li>
+    <li><%= t.task_details %></li>
+    <li><%= t.date_time_due.strftime('%d . %B . %Y - %H:%M') %></li>
+    <li><%= t.location %></li>
+  <% end %>
+<ul>

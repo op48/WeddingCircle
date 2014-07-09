@@ -1,0 +1,40 @@
+<div class="create-my-wedding">
+<h2>Create Wedding</h2>
+
+<%= form_for @wedding, url: weddings_path(@wedding), :method => :post do |f| %>
+
+  <%= field_set_tag do %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <% end %>
+
+  <%= field_set_tag do %>
+    <%= f.label :wedding_date, "Wedding Date" %>
+    <%= f.date_select(:wedding_date, { start_year: Time.now.year, end_year: (Time.now.year + 10), order: [:day, :month, :year]}) %>
+  <% end %>
+
+  <%= f.fields_for :roles do |role_attributes| %>
+    
+    <%= field_set_tag do %>
+      <%=role_attributes.label :title, "Create Role" %>
+      <%=role_attributes.text_field :title %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%=role_attributes.label :user_id, "Role Assigned To =>" %>
+      <%=role_attributes.text_field :user_id, :value => "#{@user.id}"  %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= role_attributes.label :role_description %>
+      <%= role_attributes.text_area(:role_description, :cols => 50, :rows => 5, :class => "role-description") %>
+    <% end %>
+  
+  <% end %>
+
+  
+  <%= submit_tag "Update" %>
+
+<% end %>
+
+</div>
