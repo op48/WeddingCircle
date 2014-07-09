@@ -3,8 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .edit-my-wedding {
+  display: block;
+  position: relative;
   font-weight: bold;
   float: right;
+  clear: both;
 }
 
 .role-description {
