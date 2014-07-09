@@ -5,12 +5,8 @@ Rails.application.routes.draw do
   resources :weddings, :only => [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :roles, :only => [:index, :create, :destroy]
   end
- 
-  # resource :user, :only => [] do
-  #   member do
-  #     get :me
-  #   end
-  # end
+
+  resources :tasks, :only => [:new, :create, :index, :edit, :update, :destroy]
  
   resources :users, :only => [] do
     collection do
