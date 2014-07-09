@@ -1,0 +1,46 @@
+<h2>Join this event? <%= @wedding.title %></h2>
+
+
+<section class="existing-roles">
+<h3>Existing Roles: </h3>
+
+<ul>
+  <% @roles.each do |w| %>
+    <li><%= w.title %> <%= link_to "Delete", wedding_role_path(@wedding,"#{w.id}"), :method => :delete %></li>
+  <% end %>
+</ul>
+
+</section>
+
+<section class="create-role">
+<h3>Create your role for this wedding:</h3>
+
+<%= form_for @role, url: wedding_roles_path(@wedding), :method => :post do |role_attributes| %>
+    
+    <%= field_set_tag do %>
+      <%= role_attributes.label :wedding_id %>
+      <%= role_attributes.text_field :wedding_id %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= role_attributes.label :title, "Create Role" %>
+      <%= role_attributes.text_field :title %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= role_attributes.label :user_id, "Role Assigned To =>" %>
+      <%= role_attributes.text_field :user_id, :value => "#{@user.id}"  %>
+    <% end %>
+
+    <%= field_set_tag do %>
+      <%= role_attributes.label :role_description %>
+      <%= role_attributes.text_area(:role_description, :cols => 50, :rows => 5, :class => "role-description") %>
+    <% end %>
+    
+  <%= submit_tag "Create Role" %>
+
+<% end %>
+</section>
+
+
+
