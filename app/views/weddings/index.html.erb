@@ -1,7 +1,7 @@
 <h2>Weddings</h2>
 
 <ul>
-  <% @wedding.each do |w| %>
+  <% @weddings.each do |w| %>
   <li><%= link_to "Join #{w.title}", wedding_roles_path("#{w.id}", @roles) %></li>
   <% end %>
 </ul>
