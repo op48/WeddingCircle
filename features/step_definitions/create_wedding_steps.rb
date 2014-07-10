@@ -1,39 +1,30 @@
-Given(/^a user exists$/) do
-  User.create!(
-    :first_name => Faker::Name.first_name,
-    :last_name => Faker::Name.last_name,
-    :email => Faker::Internet.email,
-    :password => "password"
-  )
+Given(/^on their dashboard$/) do
+  visit user_path
 end
 
-Given(/^user is signed in$/) do
-  visit new_user_session_path
+When(/^a user chooses to create a wedding$/) do
+  click_on 'Create Wedding'
 end
 
-Given(/^a wedding exists$/) do
-  Wedding.create!(
-    :title => "bob&sharons",
-    :wedding_date => "05 Dec 2014"
-    )
+When(/^they fill in the create wedding form with valid info$/) do
+  fill_in("Title", :with => "Joe and Sally's Wedding")
+  within "#wedding_wedding_date_3i" do
+    select '17' 
+  end
+  within "#wedding_wedding_date_2i" do
+    select 'December'
+  end
+  within "#wedding_wedding_date_1i" do
+    select '2014'
+  end
+  fill_in("Create Role", :with => "Bride")
+  fill_in("Role Description", :with => "Main Organiser, bride to be")
 end
 
-Given(/^on the edit wedding page$/) do
-  visit edit_wedding_path
+When(/^they submit "(.*?)"$/) do |save|
+  click_on save
 end
 
-When(/^a user completes the form with valid info$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^selects a role "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^a wedding should should be created$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^their role should be recorded$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^they should have a wedding saved$/) do
+  Wedding.first.title == "Joe and Sally's Wedding"
 end
