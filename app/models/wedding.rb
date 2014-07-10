@@ -6,6 +6,8 @@ class Wedding < ActiveRecord::Base
 
   accepts_nested_attributes_for :roles
 
+  validates_presence_of :title
+  
 end
 
 

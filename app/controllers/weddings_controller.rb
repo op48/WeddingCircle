@@ -15,7 +15,7 @@ class WeddingsController < ApplicationController
   end
 
   def index
-    @wedding = Wedding.all
+    @weddings = Wedding.all
   end
 
   def show

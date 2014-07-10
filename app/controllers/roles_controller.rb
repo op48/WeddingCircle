@@ -2,7 +2,6 @@ class RolesController < ApplicationController
   before_filter :authenticate_user!, :except => [:authorise_facebook, :facebook_oauth_callback]
 
   def index
-    #binding.pry
     @user = current_user
     @wedding = Wedding.find(params[:wedding_id])
     @roles = @wedding.roles
@@ -10,7 +9,6 @@ class RolesController < ApplicationController
   end 
 
   def create
-    #binding.pry
     @user = current_user
     @role = Role.create!(allowed_params)  
     redirect_to wedding_roles_path

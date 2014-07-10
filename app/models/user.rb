@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :weddings, :through => :roles
   
 def email_required?
-  #binding.pry
   super && provider.blank?
 end
 
