@@ -26,14 +26,14 @@
     <% end %>
 
     <%= field_set_tag do %>
-      <%= role_attributes.label :role_description %>
+      <%= role_attributes.label :role_description, "Role Description" %>
       <%= role_attributes.text_area(:role_description, :cols => 50, :rows => 5, :class => "role-description") %>
     <% end %>
   
   <% end %>
 
   
-  <%= submit_tag "Update" %>
+  <%= submit_tag "Save" %>
 
 <% end %>
 
