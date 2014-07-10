@@ -1,20 +1,15 @@
 <h2>Task List</h2>
 
-<div class="task-item">
-
-<ul>
-  <% @tasks.each do |t| %>
-    <li>
-      Wedding: <%= t.wedding_id %>
-      <%= link_to "Edit Task", edit_task_path("#{t.id}"), :class => "change-task" %>
-      <%= link_to "Delete Task", task_path("#{t.id}"), :method => :delete,:class => "change-task" %>
-    </li> 
-    
-    <li>Task: <%= t.title %></li>
-    <li>Description: <%= t.task_details %></li>
-    <li>Date/Time Due: <%= t.date_time_due.strftime('%d . %B . %Y, at %H:%M') %></li>
-    <li>Location: <%= t.location %></li>
-  <% end %>
-</ul>
-
+<div id="task-form" class="task-form">
+  <%= render partial: "tasks/form", locals: {task: @task} %>
 </div>
+
+<b id="add-task-form" onclick="addForm()" >Add Task</b>
+
+<% @tasks.each do |t| %>
+  <%= render partial: "task", locals: { task: t }  %>
+<% end %>
+
+<div class="new-task-add">
+</div>
+
