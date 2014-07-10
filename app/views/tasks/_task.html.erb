@@ -1,0 +1,18 @@
+<div class="task-item">
+<ul>
+  <li>
+    Wedding: <%= task.wedding_id %>
+    <%= link_to "Edit Task", edit_task_path("#{task.id}"), :class => "change-task" %>
+    <%= link_to "Delete Task", task_path("#{task.id}"), :method => :delete, :class => "change-task" %>
+  </li> 
+  
+  <li>Task: <%= task.title %></li>
+  <li>Description: <%= task.task_details %></li>
+  <li>Date/Time Due: <%= task.date_time_due.strftime('%d . %B . %Y, at %H:%M') %></li>
+  <li>Location: <%= task.location %></li>
+</div>
+</ul>
+
+
+
+
