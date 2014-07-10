@@ -63,21 +63,32 @@ a {
 .sign-in {
   display:block;
   position: relative;
-  top: 200px;
+  top: 100px;
   text-align: center;
 }
 
 .sign-up{
   display:block;
   position: relative;
-  top: 200px;
+  top: 100px;
   text-align: center;
 }
 
 .home-message { 
   position: relative;
   text-align: center;
-  top: 250px;    
+  top: 200px;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -webkit-transform 1s;
+  -o-transition: -webkit-transform 1s;    
+}
+
+.home-message:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 a:visited {

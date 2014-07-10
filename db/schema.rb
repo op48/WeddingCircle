@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709184631) do
+ActiveRecord::Schema.define(version: 20140709214813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "wedding_id"
+    t.string   "group_delete_id"
+    t.string   "facebook_grp_id"
+    t.integer  "owner_id"
+  end
 
   create_table "roles", force: true do |t|
     t.datetime "created_at"
@@ -35,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140709184631) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "wedding_id"
+    t.integer  "group_id"
   end
 
   create_table "users", force: true do |t|

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     #binding.pry
     redirect_to facebook_oauth_client.auth_code.authorize_url(
       :redirect_uri => facebook_oauth_callback_url,
-      :scope => %w(email user_events user_groups).join(","))
+      :scope => %w(email user_events user_groups publish_actions).join(","))
 
   end
 
