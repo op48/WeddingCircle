@@ -8,4 +8,5 @@ RSpec.describe Wedding, :type => :model do
   it { should have_many(:users).through(:roles)}
   it { should accept_nested_attributes_for(:roles)}
   it { should validate_presence_of(:title) }
+
 end
