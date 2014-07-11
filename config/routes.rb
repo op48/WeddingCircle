@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#home'
   
-  resources :weddings, :only => [:new, :create, :index, :show, :edit, :update, :destroy] do
+  resources :weddings do
     resources :roles, :only => [:index, :create, :destroy]
   end
 
-  resources :tasks, :only => [:new, :create, :index, :edit, :update, :destroy]
+  resources :tasks, :except => [:show]
  
   resources :users, :only => [] do
     collection do
