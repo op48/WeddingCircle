@@ -21,8 +21,8 @@
     <% end %>
 
     <%= field_set_tag do %>
-      <%=role_attributes.label :user_id, "Role Assigned To =>" %>
-      <%=role_attributes.text_field :user_id, :value => "#{@user.id}"  %>
+      <%#=role_attributes.label :user_id, "Role Assigned To =>" %>
+      <%=role_attributes.hidden_field :user_id, :value => "#{@user.id}"  %>
     <% end %>
 
     <%= field_set_tag do %>
