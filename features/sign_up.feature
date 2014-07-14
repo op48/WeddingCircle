@@ -5,8 +5,7 @@ Background:
 
 Scenario:
   When a user completes the form with valid information
-    And chooses "Bride" as their role
     And signs up
-  Then a "Bride" account should be created
-    And their type "Bride" recorded
+  Then a account should be created
+    And user should be on redirected to their dashboard
   
