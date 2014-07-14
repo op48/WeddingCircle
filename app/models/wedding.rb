@@ -1,5 +1,5 @@
 class Wedding < ActiveRecord::Base
-  has_many :roles
+  has_many :roles, dependent: :destroy
   has_many :tasks
   has_many :groups
   has_many :users, :through => :roles
