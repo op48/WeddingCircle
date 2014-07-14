@@ -12,13 +12,14 @@
 <div class="big-wrapper">
 <header>
 
-<h1><%= link_to "Wedding Circle", user_path, :class => "header-title" %></h1>
+<h1><%= link_to "Wedding Circle", root_path, :class => "header-title" %></h1>
 
 <nav>
   <ul class="nav-list">
     <% if user_signed_in? %>
     <li>
-    <li><%= link_to "Home", user_path %></li> 
+    <li><%= link_to "Home", root_path %></li>   
+    <li><%= link_to "My Dashboard", user_path %></li> 
     <li><%= link_to "My Tasks", tasks_path %></li>
     <li><%= link_to "Weddings", weddings_path %></li>
     <li><%= link_to "My Events", "#" %></li>
