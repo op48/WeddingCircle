@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   resources :weddings do
+    collection do
+      get :weddings
+    end
     resources :roles, :only => [:index, :create, :destroy]
   end
 
