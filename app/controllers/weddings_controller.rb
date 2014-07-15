@@ -18,6 +18,10 @@ class WeddingsController < ApplicationController
     @weddings = Wedding.all
   end
 
+  def weddings
+    @weddings = Wedding.all
+  end
+
   def show
     @wedding = Wedding.find(params[:id])
   end
