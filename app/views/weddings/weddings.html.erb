@@ -1,0 +1,7 @@
+<h2>My Events</h2>
+
+<ul>
+  <% @weddings.each do |w| %>
+  <li><%= link_to "#{w.title}", wedding_path("#{w.id}") %></li>
+  <% end %>
+</ul>
