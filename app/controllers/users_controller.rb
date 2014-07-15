@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.find_or_initialize_by(
       :facebook_id => user_info[:id],
       :first_name => user_info[:first_name],
+      :last_name => user_info[:last_name],
       :email => user_info[:email]
       )
 
