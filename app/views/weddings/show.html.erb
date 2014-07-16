@@ -3,7 +3,7 @@
 
 <h3>Wedding Date: <%= @wedding.wedding_date.strftime('%d . %B . %Y') %></h3>
 
-<%= link_to "Edit My Wedding", edit_wedding_path, class: "edit-my-wedding" %>
+<%= link_to "Edit My Wedding", edit_wedding_path(@wedding), class: "edit-my-wedding" %>
 <%= link_to "Delete My Wedding", wedding_path, method: :delete,  class: "edit-my-wedding" %>
 
 <h3>My Role: <%= @wedding.roles.first.title %></h3>
