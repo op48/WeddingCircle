@@ -1,10 +1,10 @@
-Feature: A user creates a wedding
+Feature: A user can create a wedding
 
 Background:
   Given a user exists
-  And user is signed in
-  And on their dashboard
-
+    And a user is signed in
+    And on their dashboard
+#@wip
 Scenario: A user creates a wedding
   When a user chooses to create a wedding
     And they fill in the create wedding form with valid info

@@ -1,8 +1,8 @@
-Feature: A user edits a wedding
+Feature: A user can edit a wedding
 
 Background:
   Given a user exists
-    And user is signed in  
+    And a user is signed in  
     And a wedding exists
     And user is on the edit wedding page  
 

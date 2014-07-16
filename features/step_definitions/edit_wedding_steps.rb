@@ -1,24 +1,31 @@
 Given(/^a user exists$/) do
-  @email = Faker::Internet.email
+  @first_name = "Charlie"
+  @last_name = "Brown"
+  @email = "charlie@mail.com"
+  @password = "password"
+
   @user = User.create!(
     :first_name => @first_name,
-    :last_name => Faker::Name.last_name,
+    :last_name => @last_name,
     :email => @email,
-    :password => "password"
+    :password => @password
   )
 end
 
-Given(/^user is signed in$/) do
+Given(/^a user is signed in$/) do
   visit new_user_session_path
-  fill_in("Email", :with => @user.email)
-  fill_in("Password", :with => "password")
+  fill_in("Email", :with => @email)
+  fill_in("Password", :with => @password)
   click_button("Sign in")
 end
 
 Given(/^a wedding exists$/) do
   @wedding = Wedding.create!(
     :title => "bob&sharons",
-    :wedding_date => "05 Dec 2014"
+    :wedding_date => "05 Dec 2014",
+    :roles_attributes => [
+      :title => "Bride", :user_id => 1, :role_description => "Bride to be" 
+    ]
   )
 end
 
