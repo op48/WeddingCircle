@@ -2,7 +2,7 @@
 
 <h2>Edit My Wedding</h2>
 
-<%= form_for @wedding, url: wedding_path, :method => :put do |f| %>
+<%= form_for @wedding, url: wedding_path(@wedding), :method => :put do |f| %>
 
   <%= field_set_tag do %>
     <%= f.label :title %>
@@ -23,7 +23,7 @@
 
     <%= field_set_tag do %>
       <%#=role_attributes.label :user_id, "Role Assigned To =>" %>
-      <%=role_attributes.hidden_field :user_id  %>
+      <%=role_attributes.hidden_field :user_id %>
     <% end %>
 
     <%= field_set_tag do %>
