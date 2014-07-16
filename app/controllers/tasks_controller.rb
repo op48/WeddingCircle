@@ -11,6 +11,9 @@ class TasksController < ApplicationController
     @user = current_user
     @task = Task.new(allowed_params)
     @task.save!
+    respond_to do |format|
+      format.html {redirect_to tasks_path}
+    end
   end
 
   def index
