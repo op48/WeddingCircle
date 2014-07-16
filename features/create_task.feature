@@ -6,7 +6,7 @@ Background:
     And a user is signed in
     And on their dashboard
 
-@wip
+#@wip
 Scenario: A user creates a task
   When a user chooses to create a task
     And a user fills in the create task form with valid info
