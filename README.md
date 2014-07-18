@@ -19,7 +19,7 @@ At present a user can create weddings and assign specific roles to users such as
 
 http://serene-brook-4773.herokuapp.com/
 
-##Logins## 
+##Logins 
 
 Login with facebook or
 Email: snoopy@email.com
