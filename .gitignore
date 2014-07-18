@@ -15,5 +15,7 @@
 /log/*.log
 /tmp
 /config/database.yml
+/config/oauth.yml
+/config/secrets.yml
 coverage
 /public/uploads
