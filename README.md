@@ -21,7 +21,7 @@ http://serene-brook-4773.herokuapp.com/
 
 ##Logins 
 
-Login with facebook or
+Login with Facebook or
 Email: snoopy@email.com
 Password: password
 
