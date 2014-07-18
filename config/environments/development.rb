@@ -34,6 +34,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.facebook_application_id = "254058501451563"
-  config.facebook_secret = "5b9001753f6623d4ac5f83b602831809"
 end
