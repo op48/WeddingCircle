@@ -39,8 +39,8 @@ class UsersController < ApplicationController
   private
   def facebook_oauth_client
     @facebook_oauth_client ||= OAuth2::Client.new(
-    WeddingCircle::Application.config.facebook_application_id,
-    WeddingCircle::Application.config.facebook_secret,
+    WeddingCircle::Application.config.facebook_application_id || ENV['facebook_application_id'],
+    WeddingCircle::Application.config.facebook_secret || ENV['facebook_secret'],
      :site => "https://graph.facebook.com/",
      :token_url => "/oauth/access_token"
     )
