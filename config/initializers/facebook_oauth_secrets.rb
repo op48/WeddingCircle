@@ -1,11 +1,7 @@
-if File.exist? "#{Rails.root}/config/oauth.yml"
+WeddingCircle::Application.configure do
+  path = "#{Rails.root}/config/oauth.yml"
+  secrets = File.exist?(path) ? YAML.load_file(File.open(path))[Rails.env] : ENV
 
-  pass = YAML.load_file(File.open("#{Rails.root}/config/oauth.yml"))[Rails.env]
-  
-  WeddingCircle::Application.configure do
-    config.facebook_application_id = pass["facebook_application_id"] 
-    config.facebook_secret = pass["facebook_secret"] 
-  end
-
-end
-
+  config.facebook_application_id = secrets['facebook_application_id']
+  config.facebook_secret = secrets['facebook_secret']
+end 
