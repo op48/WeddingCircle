@@ -12,7 +12,8 @@ class TasksController < ApplicationController
     @task = Task.new(allowed_params)
     @task.save!
     respond_to do |format|
-      format.html {redirect_to tasks_path}
+      format.html {redirect_to tasks_path(@task)}
+      format.js 
     end
   end
 
