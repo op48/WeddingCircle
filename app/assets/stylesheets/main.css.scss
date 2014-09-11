@@ -4,6 +4,8 @@ html {
 
 body {
   font-family: 'Julius Sans One', sans-serif;
+  background: image-url('flowers_sakura.jpg') no-repeat center;
+  background-size: auto;
 }
 
 .big-wrapper {
@@ -36,6 +38,10 @@ background-image: linear-gradient(to bottom, #5F5D6B 0%, #FFFFFF 100%);
   left: 0;
   z-index: 1000;
   border-bottom: 2px #5A5A66 solid;
+}
+
+.main-content {
+  
 }
 
 h1 {
