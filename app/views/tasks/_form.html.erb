@@ -12,7 +12,7 @@
 
   <%= field_set_tag do %>
     <%= f.label :task_details %>
-    <%= f.text_field :task_details %>
+    <%= f.text_area(:task_details, :cols => 50, :rows => 5, :class => "task-details") %>
   <% end %>
 
   <%= field_set_tag do %>
