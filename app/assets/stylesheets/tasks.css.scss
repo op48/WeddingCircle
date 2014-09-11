@@ -11,7 +11,8 @@
 }
 
 .task-item {
-  border: 1px #5A5A66 solid;
+  background-color: #ffffff;
+  opacity: 0.6;
   border-radius: 20px;
   padding: 15px;
   margin: 10px;
@@ -21,6 +22,10 @@
   display: none;
 }
 
+.task-details {
+  display: block;
+}
+
 #add-task-form {
   cursor: pointer;
 }
@@ -28,3 +33,4 @@
 b:hover {
   color: #9BB5F2;
 }
+
