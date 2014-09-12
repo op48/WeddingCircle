@@ -6,8 +6,8 @@
 <%= link_to "Edit My Wedding", edit_wedding_path(@wedding), class: "edit-my-wedding" %>
 <%= link_to "Delete My Wedding", wedding_path, method: :delete,  class: "edit-my-wedding" %>
 
-<h3>My Role: <%= @wedding.roles.first.title %></h3>
+<h3>My Role: <%= @wedding.roles.map{|x| x.title}.join(", ") %></h3>
 
-<h3>Role Description: <%= @wedding.roles.first.role_description%></h3>
+<h3>Role Description: <%= @wedding.roles.map{|x| x.role_description}.join(", ") %></h3>
 
 <div>
